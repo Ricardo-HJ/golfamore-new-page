@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function CtaSection() {
   return (
@@ -13,17 +14,21 @@ export function CtaSection() {
           Just €59/year for unlimited 50% discounts at 1,300+ courses
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
-            Join Golfamore Now
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6 bg-transparent"
-          >
-            View All Courses
-          </Button>
+          <Link href="/buy">
+            <Button size="lg" variant="secondary" className="text-lg px-8 py-6">
+              Join Golfamore Now
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+          <Link href="/courses">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6 bg-transparent"
+            >
+              View All Courses
+            </Button>
+          </Link>
         </div>
         <p className="mt-6 text-sm opacity-75">30-day money-back guarantee • Cancel anytime</p>
       </div>

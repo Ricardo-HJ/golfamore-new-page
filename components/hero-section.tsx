@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function HeroSection() {
   return (
@@ -25,25 +26,30 @@ export function HeroSection() {
         <p className="text-lg md:text-xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
           Join 178,500+ golfers saving an average of €1,300 per year. Golfamore membership for just €59/year.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6">
-            Join Now - €59/Year
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 text-lg px-8 py-6"
-          >
-            Browse Courses
-          </Button>
-        </div>
         {/* Trust Indicators */}
         <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/80 text-sm">
           <div>✓ 1,300+ Courses</div>
           <div>✓ 24 Countries</div>
           <div>✓ 178,500+ Members</div>
           <div>✓ 3.4M+ Rounds Played</div>
+        </div>
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link href="/buy">
+            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6">
+              Join Now - €59/Year
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+          <Link href="/courses">
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 text-lg px-8 py-6"
+            >
+              Browse Courses
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
